@@ -1,8 +1,14 @@
-==== Sign- and zero-extension
+// ==== Sign- and zero-extension
+==== 符号拡張・ゼロ拡張命令
 
-These instructions perform the sign-extension or zero-extension of the least significant 8 bits, 16 bits or 32 bits of the source register.
+// These instructions perform the sign-extension or zero-extension of the least significant 8 bits, 16 bits or 32 bits of the source register.
+//
+// These instructions replace the generalized idioms `slli rD,rS,(XLEN-<size>) + srli` (for zero-extension) or `slli + srai` (for sign-extension) for the sign-extension of 8-bit and 16-bit quantities, and for the zero-extension of 16-bit and 32-bit quantities.
 
-These instructions replace the generalized idioms `slli rD,rS,(XLEN-<size>) + srli` (for zero-extension) or `slli + srai` (for sign-extension) for the sign-extension of 8-bit and 16-bit quantities, and for the zero-extension of 16-bit and 32-bit quantities.
+これらの命令はソース・レジスタの最下位8ビット、16ビット、32ビットを符号拡張もしくはゼロ拡張する。
+
+これらの命令は、8ビットおよび16ビットのゼロ拡張時は `slli rD,rs,(XLEN-<size>) + srli` 命令、
+16ビットおよび32ビットの符号拡張時は `slli + srai` という一般的なイディオムとして置き換えることができる。
 
 [%header,cols="^1,^1,4,8"]
 |===
@@ -26,4 +32,3 @@ These instructions replace the generalized idioms `slli rD,rS,(XLEN-<size>) + sr
 |zext.h _rd_, _rs_
 |<<#insns-zext_h>>
 |===
-

@@ -1,6 +1,9 @@
-==== Byte-reverse
+// ==== Byte-reverse
 
-*rev8* reverses the byte-ordering of _rs_.
+==== バイト逆転命令
+
+// *rev8* reverses the byte-ordering of _rs_.
+*rev8* 命令は、 _rs_ の倍との順序を逆転させる。
 
 [%header,cols="^1,^1,4,8"]
 |====
@@ -15,4 +18,3 @@
 |<<#insns-rev8>>
 
 |====
-

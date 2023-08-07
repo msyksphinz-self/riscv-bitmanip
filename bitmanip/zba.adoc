@@ -6,13 +6,23 @@
 The Zba extension is frozen.
 ====
 
-The Zba instructions can be used to accelerate the generation of addresses that index into arrays of basic types (halfword, word, doubleword) using both unsigned word-sized and XLEN-sized indices: a shifted index is added to a base address.
+// The Zba instructions can be used to accelerate the generation of addresses that index into arrays of basic types (halfword, word, doubleword) using both unsigned word-sized and XLEN-sized indices: a shifted index is added to a base address.
+//
+// The shift and add instructions do a left shift of 1, 2, or 3 because these are commonly found in real-world code and because they can be implemented with a minimal amount of additional hardware beyond that of the simple adder. This avoids lengthening the critical path in implementations.
+//
+// While the shift and add instructions are limited to a maximum left shift of 3, the slli instruction (from the base ISA) can be used to perform similar shifts for indexing into arrays of wider elements. The slli.uw -- added in this extension -- can be used when the index is to be interpreted as an unsigned word.
+//
+// The following instructions (and pseudoinstructions) comprise the Zba extension:
 
-The shift and add instructions do a left shift of 1, 2, or 3 because these are commonly found in real-world code and because they can be implemented with a minimal amount of additional hardware beyond that of the simple adder. This avoids lengthening the critical path in implementations.
+Zba命令は、符号なしワードサイズとXLENサイズの両方のインデックスを使用して、基本タイプ(ハーフワード、ワード、ダブルワード)の配列にインデックスを付けるアドレスの生成を高速化するために使用できる。
 
-While the shift and add instructions are limited to a maximum left shift of 3, the slli instruction (from the base ISA) can be used to perform similar shifts for indexing into arrays of wider elements. The slli.uw -- added in this extension -- can be used when the index is to be interpreted as an unsigned word.
+シフト命令と加算命令で1、2、3の左シフトを行うのは、実際のコードで一般的であり、単純な加算器以上の最小限の追加ハードウェアで実装できるからである。
+これにより、実装におけるクリティカル・パスが長くなるのを避けることができる。
 
-The following instructions (and pseudoinstructions) comprise the Zba extension:
+シフト命令と加算命令の最大左シフト数は3に制限されているが、(ベースISAの)slli 命令を使用すると、より広い要素の配列にインデックスを付けるために同様のシフトを実行できる。
+このサブ拡張で追加されたslli.uwは、インデックスを符号なしワードとして解釈する場合に使用できる。
+
+Zba拡張は以下の命令で構成されている:
 
 [%header,cols="^1,^1,4,8"]
 |===
@@ -67,5 +77,3 @@ The following instructions (and pseudoinstructions) comprise the Zba extension:
 |<<#insns-add_uw>>
 
 |===
-
-

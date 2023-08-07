@@ -1,13 +1,18 @@
 [#zbs,reftext="Single-bit instructions"]
-=== Zbs: Single-bit instructions
+// === Zbs: Single-bit instructions
+=== Zbs: 単一ビット命令
 
 [NOTE,caption=Frozen]
 ====
-The Zbs extension is frozen.
+// The Zbs extension is frozen.
+Zbc拡張はFrozen状態である。
 ====
 
-The single-bit instructions provide a mechanism to set, clear, invert, or extract
-a single bit in a register. The bit is specified by its index.
+// The single-bit instructions provide a mechanism to set, clear, invert, or extract
+// a single bit in a register. The bit is specified by its index.
+
+シングルビット命令は、レジスタの単一ビットをセット、クリア、反転、または抽出するメカニズムを提供する。
+ビットはインデックスで指定する。
 
 [%header,cols="^1,^1,4,8"]
 |===

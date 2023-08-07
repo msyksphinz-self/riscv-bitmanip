@@ -1,7 +1,11 @@
-==== Integer minimum/maximum
+// ==== Integer minimum/maximum
+==== 整数最大値・最小値命令
 
-The integer minimum/maximum instructions are arithmetic R-type
-instructions that return the smaller/larger of two operands.
+// The integer minimum/maximum instructions are arithmetic R-type
+// instructions that return the smaller/larger of two operands.
+
+整数最大値・最小値命令はR-typeの算術演算命令であり、
+2つのオペランドの最大値・最小値を返す。
 
 [%header,cols="^1,^1,4,8"]
 |===
@@ -30,4 +34,3 @@ instructions that return the smaller/larger of two operands.
 |minu _rd_, _rs1_, _rs2_
 |<<#insns-minu>>
 |===
-

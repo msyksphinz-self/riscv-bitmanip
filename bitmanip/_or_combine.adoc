@@ -1,8 +1,15 @@
-==== OR Combine
+// ==== OR Combine
+==== OR組み合わせ命令
 
-*orc.b* sets the bits of each byte in the result _rd_ to all zeros if no bit within the respective byte of _rs_ is set, or to all ones if any bit within the respective byte of _rs_ is set.
+// *orc.b* sets the bits of each byte in the result _rd_ to all zeros if no bit within the respective byte of _rs_ is set, or to all ones if any bit within the respective byte of _rs_ is set.
+//
+// One use-case is string-processing functions, such as *strlen* and *strcpy*, which can use *orc.b* to test for the terminating zero byte by counting the set bits in leading non-zero bytes in a word.
 
-One use-case is string-processing functions, such as *strlen* and *strcpy*, which can use *orc.b* to test for the terminating zero byte by counting the set bits in leading non-zero bytes in a word.
+*orc.b* は、結果 _rd_ の各バイトのビットを、 _rs_ の各バ イト内のビットがセットされていなければすべてゼロに、 _rs_ の各バ イト内のビットがセットされていればすべて1にセットする。
+
+使用例としては、 *strlen* や *strcpy* のような文字列処理関数がある。
+ワード内の非ゼロのバイトのセットビットをカウントすることで、終端ゼロバイトをテストすることができる。
+
 
 [%header,cols="^1,^1,4,8"]
 |===

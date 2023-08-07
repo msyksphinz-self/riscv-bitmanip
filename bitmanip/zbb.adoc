@@ -3,7 +3,8 @@
 
 [NOTE,caption=Frozen]
 ====
-The Zbb extension is frozen.
+// The Zbb extension is frozen.
+Zbb拡張はFrozen状態である。
 ====
 
 include::_logical-with-negate.adoc[]
@@ -21,5 +22,3 @@ include::_rotate.adoc[]
 include::_or_combine.adoc[]
 
 include::_byteswap.adoc[]
-
-

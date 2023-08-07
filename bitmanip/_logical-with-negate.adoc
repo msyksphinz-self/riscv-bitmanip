@@ -1,4 +1,5 @@
-==== Logical with negate
+// ==== Logical with negate
+==== 否定付き論理演算命令
 
 [%header,cols="^1,^1,4,8"]
 |===

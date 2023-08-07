@@ -1,22 +1,33 @@
 [#zbkx,reftext="Crossbar permutations"]
-=== Zbkx: Crossbar permutations
+// === Zbkx: Crossbar permutations
+=== Zbkx: クロスバ組み合わせ命令
 
 [NOTE,caption=Frozen]
 ====
-The Zbkx extension is frozen.
+// The Zbkx extension is frozen.
+Zbkx拡張はFrozen状態である。
 ====
 
-These instructions implement a "lookup table" for 4 and 8 bit elements
-inside the general purpose registers.
-_rs1_ is used as a vector of N-bit words, and _rs2_ as a vector of N-bit
-indices into _rs1_.
-Elements in _rs1_ are replaced by the indexed element in _rs2_, or zero
-if the index into _rs2_ is out of bounds.
+// These instructions implement a "lookup table" for 4 and 8 bit elements
+// inside the general purpose registers.
+// _rs1_ is used as a vector of N-bit words, and _rs2_ as a vector of N-bit
+// indices into _rs1_.
+// Elements in _rs1_ are replaced by the indexed element in _rs2_, or zero
+// if the index into _rs2_ is out of bounds.
+//
+// These instructions are useful for expressing N-bit to N-bit boolean
+// operations, and implementing cryptographic code with secret
+// dependent memory accesses (particularly SBoxes) such that the execution
+// latency does not depend on the (secret) data being operated on.
 
-These instructions are useful for expressing N-bit to N-bit boolean
-operations, and implementing cryptographic code with secret
-dependent memory accesses (particularly SBoxes) such that the execution
-latency does not depend on the (secret) data being operated on.
+これらの命令は、汎用レジスタ内の4ビットと8ビットの要素に対して"ルックアップテーブル"を実装する。
+_rs1_ はNビット・ワードのベクトルとして使用され、 _rs2_ は _rs1_ へのNビット・インデックスのベクトルとして使用される。
+_rs1_ の要素は、 _rs2_ のインデックス付き要素で置き換えられる。
+_rs2_ へのインデックスが範囲外の場合はゼロとなる。
+
+これらの命令は、Nビット対Nビットのブーリアン演算を表現したり、実行レイテンシが演算対象の(秘密)データに依存しないような、
+秘密に依存するメモリアクセス(特にSBox)を持つ暗号コードを実装したりするのに便利である。
+
 
 [%header,cols="^1,^1,4,8"]
 |===

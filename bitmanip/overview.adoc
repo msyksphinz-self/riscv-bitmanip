@@ -1,44 +1,83 @@
-[preface]
-== Bit-manipulation a, b, c and s extensions grouped for public review and ratification
-
-The bit-manipulation (bitmanip) extension collection is comprised of several component extensions to the base RISC-V architecture that are intended to provide some combination of code size reduction, performance improvement, and energy reduction.
-While the instructions are intended to have general use, some instructions are more useful in some domains than others.
-Hence, several smaller bitmanip extensions are provided, rather than one large extension.
-Each of these smaller extensions is grouped by common function and use case, and each has its own Zb*-extension name.
-
-Each bitmanip extension includes a group of several bitmanip instructions that have similar purposes and that can often share the same logic. Some instructions are available in only one extension while others are available in several.
-The instructions have mnemonics and encodings that are independent of the extensions in which they appear.
-Thus, when implementing extensions with overlapping instructions, there is no redundancy in logic or encoding.
-
-The bitmanip extensions are defined for RV32 and RV64.
-Most of the instructions are expected to be forward compatible with RV128.
-While the shift-immediate instructions are defined to have at most a 6-bit immediate field, a 7th bit is available in the encoding space should this be needed for RV128.
-
-[preface]
-== Word Instructions
-
-The bitmanip extension follows the convention in RV64 that _w_-suffixed instructions (without a dot before the _w_) ignore the upper 32 bits of their inputs, operate on the least-significant 32-bits as signed values and produce a 32-bit signed result that is sign-extended to XLEN.
-
-Bitmanip instructions with the suffix _.uw_ have one operand that is an unsigned 32-bit value that is extracted from the least significant 32 bits of the specified register.  Other than that, these perform full XLEN operations.
-
-Bitmanip instructions with the suffix _.b_, _.h_ and _.w_ only look at the least significant 8-bits, 16-bits and 32-bits of the input (respectively) and produce an XLEN-wide result that is sign-extended or zero-extended, based on the specific instruction.
+// [preface]
+// == Bit-manipulation a, b, c and s extensions grouped for public review and ratification
+//
+// The bit-manipulation (bitmanip) extension collection is comprised of several component extensions to the base RISC-V architecture that are intended to provide some combination of code size reduction, performance improvement, and energy reduction.
+// While the instructions are intended to have general use, some instructions are more useful in some domains than others.
+// Hence, several smaller bitmanip extensions are provided, rather than one large extension.
+// Each of these smaller extensions is grouped by common function and use case, and each has its own Zb*-extension name.
+//
+// Each bitmanip extension includes a group of several bitmanip instructions that have similar purposes and that can often share the same logic. Some instructions are available in only one extension while others are available in several.
+// The instructions have mnemonics and encodings that are independent of the extensions in which they appear.
+// Thus, when implementing extensions with overlapping instructions, there is no redundancy in logic or encoding.
+//
+// The bitmanip extensions are defined for RV32 and RV64.
+// Most of the instructions are expected to be forward compatible with RV128.
+// While the shift-immediate instructions are defined to have at most a 6-bit immediate field, a 7th bit is available in the encoding space should this be needed for RV128.
 
 [preface]
-== Pseudocode for instruction semantics
+== ビットマニピュレーションa、b、c、s拡張の公開レビューと批准のためのグループ化
 
-The semantics of each instruction in <<#insns>> is expressed in a SAIL-like syntax.
+ビットマニピュレーション(bitmanip)拡張は、ベースとなるRISC-Vアーキテクチャに対するいくつかのコンポーネント拡張で構成され、コードサイズの削減、性能向上、エネルギー削減の組み合わせを提供することを目的としている。
+これらの命令は一般的に使用されることを意図しているが、いくつかの命令は他の命令よりもある領域で有用である。
+そのため、1つの大きな拡張ではなく、いくつかの小さなbitmanip拡張が提供されている。
+これらの小さな拡張はそれぞれ共通の機能と使用例によってグループ化され、それぞれ独自のZb*拡張名を持っている。
+
+各 bitmanip 拡張は、同じような目的を持ち、しばしば同じロジックを共有することができるいくつかの bitmanip 命令のグループを含む。
+いくつかの命令は1つの拡張子で利用可能であり、他の命令は複数の拡張子で利用可能である。
+命令は、それらが現れる拡張に依存しないニーモニックとエンコーディングを持つ。
+したがって、重複する命令を持つ拡張機能を実装する場合、ロジックやエンコーディングに冗長性はない。
+
+bitmanip拡張はRV32とRV64用に定義されている。
+ほとんどの命令はRV128と前方互換性があると予想される。
+シフト即値命令は最大6ビットの即値フィールドを持つように定義されているが、RV128で必要とされる場合には、エンコード空間に7ビット目が用意されている。
+
+
+// [preface]
+// == Word Instructions
+//
+// The bitmanip extension follows the convention in RV64 that _w_-suffixed instructions (without a dot before the _w_) ignore the upper 32 bits of their inputs, operate on the least-significant 32-bits as signed values and produce a 32-bit signed result that is sign-extended to XLEN.
+//
+// Bitmanip instructions with the suffix _.uw_ have one operand that is an unsigned 32-bit value that is extracted from the least significant 32 bits of the specified register.  Other than that, these perform full XLEN operations.
+//
+// Bitmanip instructions with the suffix _.b_, _.h_ and _.w_ only look at the least significant 8-bits, 16-bits and 32-bits of the input (respectively) and produce an XLEN-wide result that is sign-extended or zero-extended, based on the specific instruction.
+
+[preface]
+== ワード命令
+
+bitmanip拡張は、 _w_ 付き命令 ( _w_の前にドットがない)は入力の上位32ビットを無視し、最下位32ビットを符号付き値として演算し、符号をXLENに拡張した32ビットの符号付き結果を生成するというRV64の慣例に従っている。
+
+接尾辞が _.uw_ の Bitmanip 命令は、指定されたレジスタの最下位 32 ビットから抽出された符号なし 32 ビット値をオペランドとして持つ。
+それ以外は、完全なXLEN演算を行う。
+
+接尾辞 _.b_ , _.h_ , _.w_ を持つbitmanip命令は、入力の最下位 8 ビット、16 ビット、32 ビット（それぞれ）のみを参照し、符号拡張された XLEN幅の結果を生成する。
+この結果は、特定の命令に基づいて符号拡張またはゼロ拡張される。
+
+
+// [preface]
+// == Pseudocode for instruction semantics
+
+[preface]
+== 命令セマンティクスのための疑似コード
+
+// The semantics of each instruction in <<#insns>> is expressed in a SAIL-like syntax.
+<<#insns>> で記述される各命令のセマンティクスは、SAILの構文で記述される。
 
 == Extensions
 
-The first group of bitmanip extensions to be released for Public Review are:
+// The first group of bitmanip extensions to be released for Public Review are:
+
+パブリック・レビューとして後悔されたbitmanipの最初のグループは以下である。
 
 * <<#zba>>
 * <<#zbb>>
 * <<#zbc>>
 * <<#zbs>>
 
-Below is a list of all of the instructions (and pseudoinstructions) that are included in these extensions
-along with their specific mapping:
+// Below is a list of all of the instructions (and pseudoinstructions) that are included in these extensions
+// along with their specific mapping:
+
+以下は、これらの拡張に含まれるすべての命令(および擬似命令)のリストとそのマッピングの一覧である:
+
 
 [%header,cols="^3,^3,10,16,^2,^2,^2,^2"]
 |====

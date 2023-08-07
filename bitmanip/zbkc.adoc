@@ -1,16 +1,23 @@
 [#zbkc,reftext="Carry-less multiplication for Cryptography"]
-=== Zbkc: Carry-less multiplication for Cryptography
+// === Zbkc: Carry-less multiplication for Cryptography
+=== Zbkc: 暗号向けキャリーレス乗算
 
 [NOTE,caption=Frozen]
 ====
-The Zbkc extension is frozen.
+// The Zbkc extension is frozen.
+Zbkc拡張はFrozen状態である。
 ====
 
-Carry-less multiplication is the multiplication in the polynomial ring over
-GF(2). This is a critical operation in some cryptographic workloads,
-particularly the AES-GCM authenticated encryption scheme.
-This extension provides only the instructions needed to
-efficiently implement the GHASH operation, which is part of this workload.
+// Carry-less multiplication is the multiplication in the polynomial ring over
+// GF(2). This is a critical operation in some cryptographic workloads,
+// particularly the AES-GCM authenticated encryption scheme.
+// This extension provides only the instructions needed to
+// efficiently implement the GHASH operation, which is part of this workload.
+
+キャリーレス乗算は、GF(2)上の多項式環における乗算である。
+これはいくつかの暗号ワークロード、特にAES-GCM認証暗号化スキームにおいて重要な演算である。
+この拡張は、このワークロードの一部であるGHASH演算を効率的に実装するために必要な命令のみを提供する。
+
 
 [%header,cols="^1,^1,4,8"]
 |===

@@ -1,10 +1,13 @@
-==== Bitwise rotation
+// ==== Bitwise rotation
+==== ローテート命令
 
-Bitwise rotation instructions are similar to the shift-logical operations from the base spec. However, where the shift-logical 
-instructions shift in zeros, the rotate instructions shift in the bits that were shifted out of the other side of the value.
-Such operations are also referred to as ‘circular shifts’.
+// Bitwise rotation instructions are similar to the shift-logical operations from the base spec. However, where the shift-logical
+// instructions shift in zeros, the rotate instructions shift in the bits that were shifted out of the other side of the value.
+// Such operations are also referred to as ‘circular shifts’.
 
-
+ビット単位の回転命令は、基本仕様のシフト論理演算に似ている。
+ただし、シフトがゼロをシフトするのに対し、ローテート命令は値の反対側にシフトされたビットをシフトする。
+このような操作は'循環シフト'とも呼ばれる。
 
 [%header,cols="^1,^1,4,8"]
 |===

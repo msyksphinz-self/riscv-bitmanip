@@ -1,4 +1,5 @@
-==== Count leading/trailing zero bits
+// ==== Count leading/trailing zero bits
+==== Leading/Trailing ゼロビットカウント命令
 
 [%header,cols="^1,^1,4,8"]
 |===
@@ -27,4 +28,3 @@
 |ctzw _rd_, _rs_
 |<<#insns-ctzw>>
 |===
-

@@ -1,16 +1,24 @@
 [#zbc,reftext="Carry-less multiplication"]
-=== Zbc: Carry-less multiplication
+// === Zbc: Carry-less multiplication
+=== Zbc: キャリー無し乗算命令
 
 [NOTE,caption=Frozen]
 ====
-The Zbc extension is frozen.
+// The Zbc extension is frozen.
+Zbc拡張はFrozen状態である。
 ====
 
-Carry-less multiplication is the multiplication in the polynomial ring over GF(2).
+// Carry-less multiplication is the multiplication in the polynomial ring over GF(2).
+//
+// *clmul* produces the lower half of the carry-less product and *clmulh* produces the upper half of the 2&#x2715;XLEN carry-less product.
+//
+// *clmulr* produces bits 2&#x2715;XLEN−2:XLEN-1 of the 2&#x2715;XLEN carry-less product.
 
-*clmul* produces the lower half of the carry-less product and *clmulh* produces the upper half of the 2&#x2715;XLEN carry-less product.
+キャリー無し乗算はGF(2)上の多項式環における乗算である。
 
-*clmulr* produces bits 2&#x2715;XLEN−2:XLEN-1 of the 2&#x2715;XLEN carry-less product.
+*clmul* はキャリーレス積の下半分を生成し、 *clmulh* は 2&#x2715;XLEN キャリーレス積の上半分を生成する。
+
+*clmulr* は 2&#x2715;XLEN キャリーレス積のビット 2&#x2715;XLEN-2:XLEN-1 を生成する。
 
 [%header,cols="^1,^1,4,8"]
 |===

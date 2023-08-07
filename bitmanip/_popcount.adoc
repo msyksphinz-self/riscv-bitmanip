@@ -1,7 +1,11 @@
-==== Count population
+// ==== Count population
+==== Pop Count命令
 
-These instructions count the number of set bits (1-bits). This is also
-commonly referred to as population count.
+// These instructions count the number of set bits (1-bits). This is also
+// commonly referred to as population count.
+
+これらの命令はセットされている(ビットが1)の数を数える。
+これは一般的にPopulation Countと呼ばれている。
 
 [%header,cols="^1,^1,4,8"]
 |===
@@ -20,5 +24,3 @@ commonly referred to as population count.
 |cpopw _rd_, _rs_
 |<<#insns-cpopw>>
 |===
-
-

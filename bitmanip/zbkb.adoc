@@ -1,13 +1,16 @@
 [#zbkb,reftext="Bit-manipulation for Cryptography"]
-=== Zbkb: Bit-manipulation for Cryptography
+// === Zbkb: Bit-manipulation for Cryptography
+=== Zbkb: 暗号化向けビット操作命令
 
 [NOTE,caption=Frozen]
 ====
-The Zbkb extension is frozen.
+// The Zbkb extension is frozen.
+Zbkb拡張はFrozen状態である。
 ====
 
-This extension contains instructions essential for implementing
-common operations in cryptographic workloads.
+// This extension contains instructions essential for implementing
+// common operations in cryptographic workloads.
+この拡張には、暗号ワークロードの実装の基本となる共通動作のための命令が含まれている。
 
 [%header,cols="^1,^1,4,8"]
 |===
@@ -17,84 +20,84 @@ common operations in cryptographic workloads.
 |Instruction
 
 
-| &#10003; 
-| &#10003; 
-|  rol         
+| &#10003;
+| &#10003;
+|  rol
 | <<insns-rol>>
 
-|          
-| &#10003; 
-|  rolw        
+|
+| &#10003;
+|  rolw
 | <<insns-rolw>>
 
-| &#10003; 
-| &#10003; 
-|  ror         
+| &#10003;
+| &#10003;
+|  ror
 | <<insns-ror>>
 
-| &#10003; 
-| &#10003; 
-|  rori        
+| &#10003;
+| &#10003;
+|  rori
 | <<insns-rori>>
 
-|          
-| &#10003; 
-|  roriw       
+|
+| &#10003;
+|  roriw
 | <<insns-roriw>>
 
-|          
-| &#10003; 
-|  rorw        
+|
+| &#10003;
+|  rorw
 | <<insns-rorw>>
 
-| &#10003; 
-| &#10003; 
-|  andn        
+| &#10003;
+| &#10003;
+|  andn
 | <<insns-andn>>
 
-| &#10003; 
-| &#10003; 
-|  orn         
+| &#10003;
+| &#10003;
+|  orn
 | <<insns-orn>>
 
-| &#10003; 
-| &#10003; 
-|  xnor        
+| &#10003;
+| &#10003;
+|  xnor
 | <<insns-xnor>>
 
-| &#10003; 
-| &#10003; 
-|  pack        
+| &#10003;
+| &#10003;
+|  pack
 | <<insns-pack>>
 
-| &#10003; 
-| &#10003; 
-|  packh       
+| &#10003;
+| &#10003;
+|  packh
 | <<insns-packh>>
 
-|          
-| &#10003; 
-|  packw       
+|
+| &#10003;
+|  packw
 | <<insns-packw>>
 
-| &#10003; 
-| &#10003; 
-|  rev.b       
+| &#10003;
+| &#10003;
+|  rev.b
 | <<insns-revb>>
 
-| &#10003; 
-| &#10003; 
-|  rev8        
+| &#10003;
+| &#10003;
+|  rev8
 | <<insns-rev8>>
 
-| &#10003; 
-|          
-|  zip         
+| &#10003;
+|
+|  zip
 | <<insns-zip>>
 
-| &#10003; 
-|          
-|  unzip       
+| &#10003;
+|
+|  unzip
 | <<insns-unzip>>
 
 |===
