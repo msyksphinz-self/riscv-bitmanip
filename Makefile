@@ -1,8 +1,9 @@
 SPEC=bitmanip
 DATE=$(shell date  +%Y%m%d)
 VERSION=$(shell git describe --tag --always --dirty)
+SPHINX_BUILD_DIR = .
 
-all: $(SPEC)-$(VERSION).pdf $(SPEC)-$(VERSION).rst
+all: $(SPEC)-$(VERSION).rst
 
 $(SPEC)-$(VERSION).pdf:  $(SPEC)/$(SPEC).adoc \
 			 $(SPEC)/*.adoc \
@@ -41,8 +42,8 @@ $(SPEC)-$(VERSION).rst:  $(SPEC)/$(SPEC).adoc \
 			-a compress \
 			-o sphinx/$(SPEC).docbook \
 			$<
-	pandoc -s -f docbook sphinx/$(SPEC).docbook -o sphinx/$(SPEC)-$(VERSION).rst
-	sphinx-build -b html sphinx build
+	pandoc -s -f docbook sphinx/$(SPEC).docbook -o sphinx/$(SPEC).rst
+	sphinx-build -b html sphinx $(SPHINX_BUILD_DIR)
 
 DATE=$(shell date  +%Y.%m.%d)
 VERSION=$(shell git describe --tag --always --dirty)
