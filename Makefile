@@ -40,9 +40,9 @@ $(SPEC)-$(VERSION).rst:  $(SPEC)/$(SPEC).adoc \
 			-D . \
 			-a toc \
 			-a compress \
-			-o sphinx/$(SPEC).docbook \
+			-o sphinx/index.docbook \
 			$<
-	pandoc -s -f docbook sphinx/$(SPEC).docbook -o sphinx/$(SPEC).rst
+	pandoc -s -f docbook sphinx/index.docbook -o sphinx/index.rst
 	sphinx-build -b html sphinx $(SPHINX_BUILD_DIR)
 
 DATE=$(shell date  +%Y.%m.%d)
