@@ -4,11 +4,11 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en" xml:id="bitmanip">
 <info>
 <title>RISC-V Bit-Manipulation ISA-extensions</title>
-<date>2022-11-13</date>
+<date>2023-08-07</date>
 <revhistory>
 <revision>
-<revnumber>1.0.0-68-g6d33919-dirty</revnumber>
-<date>2022-11-13</date>
+<revnumber>1.0.0-69-ga8d5489-dirty</revnumber>
+<date>2023-08-07</date>
 <revremark>This document is in the Frozen state. Change is extremely unlikely. A high threshold will be used, and a change will only occur because of some truly critical issue being identified during the public review cycle. Any other desired or needed changes can be the subject of a follow-on new extension.</revremark>
 </revision>
 </revhistory>
@@ -83,7 +83,7 @@ improved this specification through their comments and questions.</simpara>
 </preface>
 <chapter xml:id="_extensions">
 <title>Extensions</title>
-<simpara>パブリック・レビューとして後悔されたbitmanipの最初のグループは以下である。</simpara>
+<simpara>パブリック・レビューとして公開されたbitmanipの最初のグループは以下である。</simpara>
 <itemizedlist>
 <listitem>
 <simpara><xref linkend="zba"/></simpara>

@@ -2,7 +2,7 @@ SPEC=bitmanip
 DATE=$(shell date  +%Y%m%d)
 VERSION=$(shell git describe --tag --always --dirty)
 
-all: $(SPEC)-$(VERSION).pdf $(SPEC)-$(VERSION).rst
+all: $(SPEC)-$(VERSION).rst
 
 $(SPEC)-$(VERSION).pdf:  $(SPEC)/$(SPEC).adoc \
 			 $(SPEC)/*.adoc \

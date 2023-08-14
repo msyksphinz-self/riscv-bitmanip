@@ -66,7 +66,7 @@ bitmanip拡張は、 _w_ 付き命令 ( _w_の前にドットがない)は入力
 
 // The first group of bitmanip extensions to be released for Public Review are:
 
-パブリック・レビューとして後悔されたbitmanipの最初のグループは以下である。
+パブリック・レビューとして公開されたbitmanipの最初のグループは以下である。
 
 * <<#zba>>
 * <<#zbb>>
